@@ -13,7 +13,13 @@
 		"prepare": "husky install",
 		"test": "vitest",
 		"test:ui": "vitest --ui",
-		"coverage": "vitest run --coverage"
+		"coverage": "vitest run --coverage",
+		"pretty-quick": "pretty-quick"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
 	},
 	"dependencies": {
 		"jotai": "^1.13.0",
