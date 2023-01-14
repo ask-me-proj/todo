@@ -1,4 +1,5 @@
 name: Lint
+uses: Borales/actions-yarn@v4.2.0
 on: [push]
 
 jobs:
