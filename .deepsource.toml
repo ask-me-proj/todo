@@ -1,7 +1,14 @@
 version = 1
 
 [[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  plugins = ["react"]
+
+[[analyzers]]
 name = "typescript"
+enabled = false
 
   [analyzers.meta]
   plugins = ["react"]
