@@ -1,4 +1,4 @@
-name: Lint
+name: Test
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Lint
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,7 +24,7 @@ jobs:
           cmd: install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Lint the app
+      - name: Runs tests
         uses: borales/actions-yarn@v4
         with:
-          cmd: lint
+          cmd: test
