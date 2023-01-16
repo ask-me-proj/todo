@@ -1,0 +1,98 @@
+@tailwind components;
+@tailwind utilities;
+
+.PrimaryButtonLg,
+.PrimaryButtonMd,
+.PrimaryButtonSm,
+.OutlinedButtonLg,
+.OutlinedButtonMd,
+.OutlinedButtonSm,
+.InvisibleButtonLg,
+.InvisibleButtonMd,
+.InvisibleButtonSm,
+.DangerButtonLg,
+.DangerButtonMd,
+.DangerButtonSm {
+	@apply flex items-center justify-center px-2 box-border gap-2;
+}
+
+.PrimaryButtonLg,
+.PrimaryButtonMd,
+.PrimaryButtonSm {
+	@apply text-white bg-indigo-600;
+	&:hover {
+		@apply shadow-lg shadow-indigo-500/40 bg-indigo-500;
+	}
+	&:focus {
+		@apply shadow-focus;
+	}
+	&:disabled {
+		@apply bg-indigo-400 pointer-events-none;
+	}
+}
+
+.OutlinedButtonLg,
+.OutlinedButtonMd,
+.OutlinedButtonSm {
+	@apply dark:text-original-dark-100 dark:bg-original-dark-800 border dark:border-original-dark-700;
+	&:hover,
+	&:focus {
+		@apply dark:text-white dark:border-original-dark-600;
+	}
+	&:focus {
+		@apply shadow-focus;
+	}
+	&:disabled {
+		@apply dark:text-original-dark-100 dark:bg-original-dark-600 dark:border-original-dark-400 pointer-events-none;
+	}
+}
+
+.InvisibleButtonLg,
+.InvisibleButtonMd,
+.InvisibleButtonSm {
+	@apply dark:text-original-dark-100 bg-transparent;
+	&:hover,
+	&:focus {
+		@apply dark:text-white dark:bg-original-dark-800;
+	}
+	&:focus {
+		@apply shadow-focus;
+	}
+	&:disabled {
+		@apply dark:text-original-dark-50 pointer-events-none;
+	}
+}
+
+.DangerButtonLg,
+.DangerButtonMd,
+.DangerButtonSm {
+	@apply text-red-500 dark:bg-original-dark-800 border dark:border-original-dark-700;
+	&:hover,
+	&:focus {
+		@apply text-white bg-red-500 shadow-lg shadow-red-500/40 border-0;
+	}
+	&:focus {
+		@apply shadow-danger-focus;
+	}
+}
+
+.PrimaryButtonSm,
+.OutlinedButtonSm,
+.InvisibleButtonSm,
+.DangerButtonSm {
+	@apply w-[100px] h-[30px] rounded-lg text-sm;
+}
+
+.PrimaryButtonMd,
+.OutlinedButtonMd,
+.InvisibleButtonMd,
+.DangerButtonMd {
+	@apply w-[125px] h-[35px] rounded-lg text-base;
+}
+
+.PrimaryButtonLg,
+.OutlinedButtonLg,
+.InvisibleButtonLg,
+.DangerButtonLg {
+	@apply w-[140px] h-[40px] rounded-xl text-base;
+}

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.icon-sm {
+	@apply w-[16px] h-[16px];
+}
+
+.icon-md {
+	@apply w-[18px] h-[18px];
+}
+
+:root {
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+}
