@@ -1,6 +1,6 @@
-import { style } from "../../utils";
 import { ButtonProps } from "./Button.types";
 import styles from "./Button.module.scss";
+import { style } from "../../../utils";
 
 const useButtonStyles = (props: ButtonProps): string => {
 	const { variant, size, sx } = props;

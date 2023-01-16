@@ -1,6 +1,6 @@
 import { PlusIcon } from "@radix-ui/react-icons";
 import { vi } from "vitest";
-import { render, screen } from "../../utils/test-utils";
+import { render, screen } from "../../../utils/test-utils";
 import { Button } from "./Button";
 
 describe("Button", () => {
