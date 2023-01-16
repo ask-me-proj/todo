@@ -34,10 +34,10 @@
 .OutlinedButtonLg,
 .OutlinedButtonMd,
 .OutlinedButtonSm {
-	@apply dark:text-original-dark-100 dark:bg-original-dark-800 border dark:border-original-dark-700;
+	@apply dark:text-original-dark-100 dark:bg-original-dark-900 border-2 dark:border-original-dark-700;
 	&:hover,
 	&:focus {
-		@apply dark:text-white dark:border-original-dark-600;
+		@apply dark:text-white dark:bg-original-dark-800 dark:border-original-dark-600;
 	}
 	&:focus {
 		@apply shadow-focus;
@@ -66,10 +66,10 @@
 .DangerButtonLg,
 .DangerButtonMd,
 .DangerButtonSm {
-	@apply text-red-500 dark:bg-original-dark-800 border dark:border-original-dark-700;
+	@apply text-red-500 dark:bg-original-dark-800 border-2 dark:border-original-dark-700;
 	&:hover,
 	&:focus {
-		@apply text-white bg-red-500 shadow-lg shadow-red-500/40 border-0;
+		@apply text-white bg-red-500 shadow-lg shadow-red-500/40 border-red-400;
 	}
 	&:focus {
 		@apply shadow-danger-focus;
