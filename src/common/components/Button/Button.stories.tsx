@@ -1,3 +1,4 @@
+import { PlusIcon } from "@radix-ui/react-icons";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Button } from "./Button";
 
@@ -38,4 +39,22 @@ Danger.args = {
 	size: "md",
 	children: "Click me!",
 	disabled: false,
+};
+
+export const WithLeadingIcon = Template.bind({});
+WithLeadingIcon.args = {
+	variant: "primary",
+	size: "md",
+	children: "Click me!",
+	disabled: false,
+	leadingIcon: <PlusIcon />,
+};
+
+export const WithTrailingIcon = Template.bind({});
+WithTrailingIcon.args = {
+	variant: "primary",
+	size: "md",
+	children: "Click me!",
+	disabled: false,
+	trailingIcon: <PlusIcon />,
 };

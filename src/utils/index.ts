@@ -1,4 +1,4 @@
-const style = (className: string, sx: string): string => {
+const style = (className: string, sx: string | undefined): string => {
 	return `${className} ${sx}`;
 };
 

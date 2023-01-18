@@ -2,7 +2,7 @@ import { ButtonProps } from "./Button.types";
 import styles from "./Button.module.scss";
 import { style } from "../../../utils";
 
-const useButtonStyles = (props: ButtonProps): string => {
+const useButtonStyles = (props: ButtonProps) => {
 	const { variant, size, sx } = props;
 
 	if (variant === "primary") {
