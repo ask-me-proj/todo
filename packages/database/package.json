@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "db",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "db:generate": "prisma generate",
+    "db:pull": "prisma db pull",
+    "db:push": "prisma db push"
+  },
+  "devDependencies": {
+    "prisma": "^4.9.0",
+    "tsup": "^6.5.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.9.0"
+  }
+}
