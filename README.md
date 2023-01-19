@@ -4,11 +4,40 @@
 
 ```shell
 git clone https://github.com/ask-me-proj/todo.git
+```
+
+```shell
 cd todo
+```
+
+```shell
 yarn -i
+```
+
+```shell
 yarn db:generate
+```
+
+```shell
 yarn build
+```
+
+## Running the app
+
+```shell
 yarn dev
+```
+
+## Testing
+
+```shell
+yarn test
+```
+
+## Linting
+
+```shell
+yarn lint
 ```
 
 ## How to install new packages
