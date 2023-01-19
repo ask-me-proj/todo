@@ -7,7 +7,7 @@ git clone https://github.com/ask-me-proj/todo.git
 cd todo
 yarn -i
 yarn db:generate
-yarn workspace db build
+yarn build
 yarn dev
 ```
 
