@@ -1,11 +1,11 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { Size } from "../../types";
 
 type ButtonVariants = "primary" | "outlined" | "invisible" | "danger";
-type ButtonSizes = "lg" | "md" | "sm";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
 	variant: ButtonVariants;
-	size: ButtonSizes;
+	size: Size;
 	leadingIcon?: ReactNode;
 	trailingIcon?: ReactNode;
 	children: ReactNode;

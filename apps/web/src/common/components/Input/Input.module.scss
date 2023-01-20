@@ -1,0 +1,51 @@
+@tailwind components;
+@tailwind utilities;
+
+.InputLg,
+.InputMd,
+.InputSm,
+.InputError {
+	@apply flex border pl-3 box-border bg-original-dark-900 rounded-lg;
+}
+
+.InputLg,
+.InputMd,
+.InputSm {
+	@apply dark:border-original-dark-700 text-sm dark:text-original-dark-100;
+	&:hover,
+	&:focus {
+		@apply border-blue-500;
+	}
+	&:focus {
+		@apply shadow-focus;
+	}
+	&::placeholder {
+		@apply text-sm dark:text-original-dark-400;
+	}
+	&:disabled {
+		@apply dark:border-original-dark-600 dark:bg-original-dark-700;
+	}
+}
+
+.InputSm {
+	@apply w-36 h-[30px];
+}
+
+.InputMd {
+	@apply w-36 h-[35px];
+}
+
+.InputLg {
+	@apply w-36 h-[40px];
+}
+
+.InputError {
+	@apply border-red-500;
+	&:hover,
+	&:focus {
+		@apply border-red-500;
+	}
+	&:focus {
+		@apply shadow-danger-focus;
+	}
+}
