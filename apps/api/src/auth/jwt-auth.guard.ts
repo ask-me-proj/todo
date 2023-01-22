@@ -6,7 +6,10 @@ import { IS_PUBLIC_KEY } from "src/common";
 @Injectable()
 export class JwtAuthGuard extends AuthGuard("jwt") {
   constructor(private reflector: Reflector) {
-    super();
+    super({
+      secretOrKey:
+        "y_6sGQhI-4XJiQA80UQN1-wbOQTWc1bz8mH4wcnO53WaTdVh4dnJbszc4uJLkHL9ELepw9_KvutfeZ0FGX0qmYj2owgTDwZJESVX7JCOdN5Hby_E0_PcuinjFFEIbIJS25Gf0iMyhA5HqqhatwKeIABd3lysUrLu_6SSHIT5sRM",
+    });
   }
 
   canActivate(context: ExecutionContext) {

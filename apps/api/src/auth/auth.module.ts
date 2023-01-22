@@ -12,13 +12,14 @@ import { LocalStrategy } from "./local.strategy";
   imports: [
     UserModule,
     PrismaModule,
-    PassportModule,
     JwtModule.register({
-      secret: process.env.SECRET,
+      secret:
+        "y_6sGQhI-4XJiQA80UQN1-wbOQTWc1bz8mH4wcnO53WaTdVh4dnJbszc4uJLkHL9ELepw9_KvutfeZ0FGX0qmYj2owgTDwZJESVX7JCOdN5Hby_E0_PcuinjFFEIbIJS25Gf0iMyhA5HqqhatwKeIABd3lysUrLu_6SSHIT5sRM",
       signOptions: { expiresIn: "60s" },
     }),
   ],
   controllers: [AuthController],
   providers: [AuthService, LocalStrategy, JwtStrategy],
+  exports: [AuthService],
 })
 export class AuthModule {}

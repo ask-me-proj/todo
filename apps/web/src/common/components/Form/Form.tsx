@@ -1,13 +1,13 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { PropsWithoutRef, ReactNode } from "react";
-import { FormProvider, useForm, UseFormProps } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
+import { FormProps } from "./Form.types";
 
 export function Form<S extends z.ZodType<any, any>>(props: FormProps<S>) {
 	const { schema, initialValues, children, onSubmit, ...rest } = props;
 
 	const ctx = useForm<z.infer<S>>({
-		mode: "onBlur",
+		mode: "onSubmit",
 		resolver: zodResolver(schema),
 		defaultValues: initialValues,
 	});

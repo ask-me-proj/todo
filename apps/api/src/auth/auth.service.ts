@@ -8,9 +8,9 @@ import { compare } from "bcrypt";
 import { User } from "db/generated";
 import { PrismaService } from "src/prisma/prisma.service";
 import { UserService } from "src/user/user.service";
-import { LoginDto } from "./dto/login.dto";
-import { SignupDto } from "./dto/signup.dto";
-import { ValidateUserDto } from "./dto/validate-user.dto";
+import { LoginDto } from "../dto/login.dto";
+import { SignupDto } from "../dto/signup.dto";
+import { ValidateUserDto } from "../dto/validate-user.dto";
 import { Payload, Tokens } from "./types";
 
 @Injectable()

@@ -9,10 +9,10 @@ import {
   UseInterceptors,
 } from "@nestjs/common";
 import { User } from "db/generated";
-import { AuthUser } from "src/common";
+import { AuthUser, Public } from "src/common";
 import { AuthService } from "./auth.service";
-import { LoginDto } from "./dto/login.dto";
-import { SignupDto } from "./dto/signup.dto";
+import { LoginDto } from "../dto/login.dto";
+import { SignupDto } from "../dto/signup.dto";
 import { JwtAuthGuard } from "./jwt-auth.guard";
 import { LocalAuthGuard } from "./local-auth.guard";
 import { TokenInterceptor } from "./token.interceptor";
@@ -23,6 +23,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post("signup")
+  @Public()
   @HttpCode(HttpStatus.CREATED)
   @UseInterceptors(TokenInterceptor)
   async signup(@Body() data: SignupDto): Promise<User> {
@@ -32,6 +33,7 @@ export class AuthController {
   }
 
   @Post("login")
+  @Public()
   @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
   @UseInterceptors(TokenInterceptor)
