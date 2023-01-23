@@ -1,4 +1,4 @@
-import { Controller, Get, Request } from "@nestjs/common";
+import { Controller, Get } from "@nestjs/common";
 import { AppService } from "./app.service";
 import { Public } from "./common";
 
@@ -8,7 +8,7 @@ export class AppController {
 
   @Get()
   @Public()
-  getHello(@Request() req) {
-    return this.appService.getHello(req);
+  getHello(): string {
+    return this.appService.getHello();
   }
 }
