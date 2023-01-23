@@ -10,6 +10,15 @@
 	@apply w-[18px] h-[18px];
 }
 
+input {
+	outline: none;
+}
+
+body,
+#root {
+	@apply flex w-full h-screen;
+}
+
 :root {
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.87);

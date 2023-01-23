@@ -25,6 +25,12 @@
     },
     "db:push": {
       "outputs": []
+    },
+    "db:studio": {
+      "outputs": []
+    },
+    "db:build": {
+      "outputs": []
     }
   }
 }

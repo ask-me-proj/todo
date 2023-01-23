@@ -1,0 +1,9 @@
+@tailwind components;
+@tailwind utilities;
+
+.AuthLayout {
+	@apply flex flex-col items-center justify-center w-full h-full box-border;
+	.AuthWrapper {
+		@apply flex flex-col items-center w-96 h-auto dark:bg-original-dark-800 border dark:border-original-dark-700 rounded-2xl gap-3 p-4 box-border;
+	}
+}

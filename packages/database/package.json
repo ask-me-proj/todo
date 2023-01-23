@@ -9,10 +9,11 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup",
+    "db:build": "tsup",
     "db:generate": "prisma generate",
     "db:pull": "prisma db pull",
-    "db:push": "prisma db push"
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
   },
   "devDependencies": {
     "prisma": "^4.9.0",
