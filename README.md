@@ -2,6 +2,8 @@
 
 ## Setup
 
+## Setup an app
+
 ```shell
 git clone https://github.com/ask-me-proj/todo.git
 ```
@@ -14,11 +16,17 @@ cd todo
 yarn -i
 ```
 
+### Setup a database
+
+Firstly ask somebody for database url, then create `.env` file at the `packages/database`, add `DATABASE_URL` variable with your db url value. After these steps run following commands:
+
 ```shell
+# generates type from your schema models
 yarn db:generate
 ```
 
 ```shell
+# builds code generated from schema
 yarn db:build
 ```
 
