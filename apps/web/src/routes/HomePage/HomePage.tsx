@@ -1,21 +1,9 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { API_ROUTE } from "../../common";
+import { useCurrentUser } from "../../features/user";
 
 const HomePage = () => {
-	const [response, setResponse] = useState<string>("NO RESPONCE FROM SERVER");
+	const user = useCurrentUser();
 
-	useEffect(() => {
-		const fetchResponce = async () => {
-			const res = await axios.get(API_ROUTE);
-
-			setResponse(res.data);
-		};
-
-		fetchResponce();
-	}, []);
-
-	return <div>{response}</div>;
+	return <div>{user?.name}</div>;
 };
 
 export { HomePage };

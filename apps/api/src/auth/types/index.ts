@@ -1,8 +1,5 @@
-import { User } from "db/generated";
-
 interface Tokens {
   access_token: string;
-  user: User;
 }
 
 interface Payload {

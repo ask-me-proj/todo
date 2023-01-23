@@ -12,9 +12,11 @@
     "test": "turbo run test",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "db:build": "turbo run db:build",
     "db:generate": "turbo run db:generate",
     "db:pull": "turbo run db:pull",
     "db:push": "turo run db:push",
+    "db:studio": "turbo run db:studio",
     "prepare": "husky install"
   },
   "husky": {

@@ -5,18 +5,15 @@ import {
   HttpCode,
   HttpStatus,
   Post,
-  UseGuards,
+  Request,
   UseInterceptors,
 } from "@nestjs/common";
 import { User } from "db/generated";
-import { AuthUser, Public } from "src/common";
+import { Public } from "src/common";
 import { AuthService } from "./auth.service";
-import { LoginDto } from "../dto/login.dto";
-import { SignupDto } from "../dto/signup.dto";
-import { JwtAuthGuard } from "./jwt-auth.guard";
-import { LocalAuthGuard } from "./local-auth.guard";
-import { TokenInterceptor } from "./token.interceptor";
-import { Tokens } from "./types";
+import { LoginDto } from "./dto/login.dto";
+import { SignupDto } from "./dto/signup.dto";
+import { TokenInterceptor } from "./interceptors/token.interceptor";
 
 @Controller("auth")
 export class AuthController {
@@ -33,19 +30,18 @@ export class AuthController {
   }
 
   @Post("login")
-  @Public()
-  @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
   @UseInterceptors(TokenInterceptor)
-  async login(@Body() data: LoginDto): Promise<Tokens> {
+  async login(@Body() data: LoginDto): Promise<any> {
     const login = await this.authService.login(data);
 
     return login;
   }
 
   @Get("profile")
-  @UseGuards(JwtAuthGuard)
-  profile(@AuthUser() user: User): User {
+  profile(@Request() req): Promise<User | null> {
+    const user = this.authService.getCurrentUser(req);
+
     return user;
   }
 }

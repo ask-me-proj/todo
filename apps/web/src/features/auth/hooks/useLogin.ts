@@ -19,7 +19,7 @@ const useLogin = (): UseLogin => {
 	const { mutateAsync, isLoading, isError, error } = useMutation(
 		async (input: z.infer<typeof LoginSchema>) => {
 			const data = LoginSchema.parse(input);
-			await axios.post(url, data);
+			await axios.post(url, data, { withCredentials: true });
 		},
 		{
 			onSuccess() {

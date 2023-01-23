@@ -6,12 +6,13 @@ import {
 import { JwtService } from "@nestjs/jwt";
 import { compare } from "bcrypt";
 import { User } from "db/generated";
+import { Request } from "express";
 import { PrismaService } from "src/prisma/prisma.service";
 import { UserService } from "src/user/user.service";
-import { LoginDto } from "../dto/login.dto";
-import { SignupDto } from "../dto/signup.dto";
-import { ValidateUserDto } from "../dto/validate-user.dto";
-import { Payload, Tokens } from "./types";
+import { LoginDto } from "./dto/login.dto";
+import { SignupDto } from "./dto/signup.dto";
+import { ValidateUserDto } from "./dto/validate-user.dto";
+import { Payload } from "./types";
 
 @Injectable()
 export class AuthService {
@@ -39,7 +40,7 @@ export class AuthService {
     return user;
   }
 
-  async login(data: LoginDto): Promise<Tokens> {
+  async login(data: LoginDto): Promise<any> {
     const { email, password } = data;
 
     const user = await this.prisma.user.findFirst({
@@ -63,9 +64,10 @@ export class AuthService {
       sub: user.id,
     };
 
+    const token = this.jwtService.sign(payload);
+
     return {
-      access_token: await this.signToken(payload),
-      user: user,
+      access_token: token,
     };
   }
 
@@ -78,7 +80,11 @@ export class AuthService {
   async validateUser(data: ValidateUserDto): Promise<User | null> {
     const { name, hashedPassword } = data;
 
-    const user = await this.userService.findOne(name);
+    const user = await this.prisma.user.findFirst({
+      where: {
+        name,
+      },
+    });
 
     if (!user) {
       return null;
@@ -89,6 +95,18 @@ export class AuthService {
     if (!password) {
       return null;
     }
+
+    return user;
+  }
+
+  async getCurrentUser(req: Request) {
+    const cookie = req.cookies["token"];
+
+    const user = await this.prisma.user.findFirst({
+      where: {
+        hashedToken: cookie,
+      },
+    });
 
     return user;
   }

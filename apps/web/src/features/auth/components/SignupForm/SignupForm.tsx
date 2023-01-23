@@ -68,7 +68,7 @@ const SignupForm = () => {
 				variant="primary"
 				size="md"
 				type="submit"
-				sx="w-full mt-3"
+				sx="w-full mt-3 bg-indigo-500"
 				disabled={isLoading || disabled}
 			>
 				{isLoading ? "Signing up" : "Sign up"}

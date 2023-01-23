@@ -19,7 +19,7 @@ yarn db:generate
 ```
 
 ```shell
-yarn build
+yarn db:build
 ```
 
 ## Running the app

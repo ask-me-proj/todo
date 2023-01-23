@@ -56,7 +56,7 @@ const LoginForm = () => {
 				size="md"
 				type="submit"
 				disabled={isLoading || disabled}
-				sx="w-full mt-3"
+				sx="w-full mt-3 bg-indigo-500"
 			>
 				{isLoading ? "Signing in" : "Sign in"}
 			</Button>

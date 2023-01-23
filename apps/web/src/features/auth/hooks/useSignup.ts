@@ -19,7 +19,9 @@ const useSignup = (): UseSignup => {
 	const { mutateAsync, isLoading, error, isError } = useMutation(
 		async (input: z.infer<typeof SignupSchema>) => {
 			const data = SignupSchema.parse(input);
-			await axios.post(url, data);
+			await axios.post(url, data, { withCredentials: true }).catch((error) => {
+				console.log(error.data);
+			});
 		},
 		{
 			onSuccess() {
