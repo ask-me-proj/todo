@@ -1,4 +1,5 @@
 import { Module } from "@nestjs/common";
+import { ConfigModule } from "@nestjs/config";
 import { JwtModule } from "@nestjs/jwt";
 import { PassportModule } from "@nestjs/passport";
 import { PrismaModule } from "src/prisma/prisma.module";
@@ -11,6 +12,7 @@ import { LocalStrategy } from "./strategies/local.strategy";
 
 @Module({
   imports: [
+    ConfigModule,
     UserModule,
     PrismaModule,
     PassportModule.register({ session: true }),
